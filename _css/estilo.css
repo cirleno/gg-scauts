@@ -150,30 +150,42 @@ nav#menu ul {
 	list-style: none;
 	text-transform: uppercase;
 	position: relative;
-	top: -20px;
+	top: -12px;
 	display: inline-block;
-	margin: 0 0 0 350px;
+	margin: 0 0 0 340px;
+	gap: 2px;
 }
 nav#menu li {
 	display: inline-block;
-	background-color: #dddddd;
-	padding: 10px;
+	background-color: var(--cor-fundo-menu);
+	padding: 0.55em 0.9em;
 	margin: 2px;
-	transition: background-color 1s;
+	border-radius: var(--raio-botao);
+	transition: var(--transicao-curta);
+}
+nav#menu li:focus-within {
+	background-color: var(--cor-hover-menu);
+	outline: 2px solid var(--cor-acento-foco);
+	outline-offset: 2px;
 }
 nav#menu li:hover {
-	background-color: #606060;
+	background-color: var(--cor-hover-menu);
 }
 nav#menu h1 {
 	display: none;
 }
 nav#menu a {
-	color: #000000;
+	color: var(--cor-texto-menu);
 	text-decoration: none;
 }
-nav#menu a:hover {
-	color: #ffffff;
+nav#menu a:hover,
+nav#menu a:focus-visible {
+	color: var(--cor-texto-menu-hover);
 	text-decoration: underline;
+}
+nav#menu a[aria-current="page"],
+nav#menu a[aria-current] {
+	color: var(--cor-texto-menu-hover);
 }
 main#conteudo {
 	display: flex;
