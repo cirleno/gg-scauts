@@ -51,6 +51,12 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 - `fotos.html` album `<li>`s are focusable via `tabindex="0"`; `fotos.css` mirrors all `:hover` zoom/caption rules with `:focus-visible`.
 - `google-glass.html` and `404.html` are exceptions: no skip link/main/nav (iframe-only content / self-contained).
 
+## Versioning / Tags
+- Releases are annotated git tags on `main`, one per completed refit/fix batch, always pushed to `origin`. Currently at **v13** (`5589924`, header: logo sobre a divisória + header responsivo).
+- When you finish a batch: create + push an annotated tag (`git tag -a vN -m "descrição"` → `git push origin vN`), bump this AGENTS.md note, then commit. Example: `git tag -a v14 -m "…"`.
+- Commit messages are pt-br, Conventional-Commits style (`refactor:`, `fix:`, `feat:`, `chore:`, `docs:`), single short subject (+ optional body), matching the existing `git log`.
+- Keep AGENTS.md describing the **current** (tagged) state — it's the runbook for whatever commit an agent checks out.
+
 ## Style
 - `.editorconfig` is authoritative: UTF-8, LF line endings, 2-space indent, final newline, no trailing whitespace.
 - BUT the legacy HTML/CSS/JS files here are **Tab**-indented (each refit kept the tabs). Preserve the local indentation of the file you're editing instead of converting to `.editorconfig`'s 2-space rule — mass-reformatting creates noisy diffs. `.gitattributes` normalizes all text files to LF via `* text=auto`.
