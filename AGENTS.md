@@ -11,7 +11,6 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 ## Stylesheets (refit gotcha)
 - Every page links `BPcss/style.css` (HTML5 Boilerplate v9 base: reset/`.box-model` normalization) **first**, then `_css/estilo.css` (the site base: `#interface`, `#menu`, `#icone`, body, a11y/skip-link/focus styles, responsive) **plus** one page sheet: `specs.html` and `google-glass.html` → `specs.css`, `index.html` → (base only), `fotos.html` → `fotos.css`, `multimidia.html` → `media.css`, `fale-conosco.html` → `form.css`. Page sheets hold only page-specific rules. Edit `_css/estilo.css` for styles that should apply across pages.
 - `BPcss/style.css` is the HTML5 Boilerplate base (247 lines) — was kept aside and adopted as the reset/boilerplate base in Fase 4.
-- `@font-face` in `_css/estilo.css` points at `_fonts/bubblegum-sans-regular.otf` (a real file); a second `@font-face`/`@import` setup uses Titillium Web — plan is to consolidate fonts in Fase 5.
 - `404.html` is self-contained: inline `<style>`, no `_css/` link.
 - Keep `@charset "UTF-8"` lowercase at the top of every `_css/` sheet, and never use `transition: all` — list properties.
 - Responsive: `_css/estilo.css` holds the fluid `#interface` (max-width 1000px) and breakpoints (1000/760/480px); page sheets add their own `@media` (e.g. `media.css` scales the `#tv-radio` mockup via `transform: scale()`).
@@ -25,6 +24,11 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 
 ## Media
 - In `multimidia.html`, `_media/` uses legacy multi-source fallbacks (video mp4/ogv/webm; audio mp3/ogg/m4a) — keep all `<source>` entries. `index.html` videos are single-source mp4 only.
+
+## Assets/Perf (Fase 5)
+- Fonts: Titillium Web loaded via `<link>` (Google Fonts `/css2`, `display=swap`) with `preconnect` to `fonts.googleapis.com`/`fonts.gstatic.com` in every page `<head>`. `_fonts/` was removed; `_css/estilo.css` no longer has `@import`/`@font-face`. Brand headings use `'Titillium Web'`.
+- Font Awesome: legacy `use.fontawesome.com/d7c3fe8fa0.js` script removed; icons now load from Font Awesome 4.7.0 CSS on `cdnjs.cloudflare.com` (`fa fa-…` classes unchanged) with `preconnect` in `<head>`.
+- Every `<img>` has explicit `width`/`height` (matches natural size to avoid CLS) and below-fold images use `loading="lazy"`.
 
 ## Serving and build
 - **Zero build**: webpack configs and `package.json` were removed (they referenced nonexistent `js/`/`img`/`node_modules`). There is no npm/task-runner flow; don't re-add it.
