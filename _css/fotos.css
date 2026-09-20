@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 ul#album-fotos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 700px;
@@ -10,10 +13,10 @@ ul#album-fotos {
 	list-style: none;
 }
 ul#album-fotos li {
-	float: left;
-	width: 200px;
-	height: 200px;
-	margin: 10px;
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	aspect-ratio: 1 / 1;
 	border: 5px solid #ffffff;
 	background-color: #ffffff;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
@@ -26,8 +29,9 @@ ul#album-fotos span {
 	text-shadow: 1px 1px 1px #000000;
 	background-color: rgba(0, 0, 0, 0.3);
 	font-size: 9pt;
-	line-height: 370px;
+	width: 100%;
 	padding: 5px;
+	box-sizing: border-box;
 }
 ul#album-fotos li:hover,
 ul#album-fotos li:focus-visible {
@@ -110,14 +114,9 @@ ul#album-fotos li#foto06:focus-visible {
 }
 @media only screen and (max-width: 480px) {
 	ul#album-fotos {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
 		padding: 10px;
-	}
-	ul#album-fotos li {
-		width: 45%;
-		height: auto;
-		padding-bottom: 45%;
-		margin: 5px;
-		background-size: cover !important;
 	}
 	ul#album-fotos li:hover,
 	ul#album-fotos li:focus-visible {
@@ -127,7 +126,6 @@ ul#album-fotos li#foto06:focus-visible {
 		background-size: cover !important;
 	}
 	ul#album-fotos span {
-		line-height: 100px;
 		font-size: 8pt;
 	}
 }
