@@ -9,11 +9,13 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 - All copy, titles, and nav labels stay in Portuguese (pt-br).
 
 ## Stylesheets (refit gotcha)
-- Every page links `_css/estilo.css` (the base: `#interface`, `#menu`, `#icone`, body, a11y/skip-link/focus styles) **plus** one page sheet: `specs.html` and `google-glass.html` → `specs.css`, `index.html` → (base only), `fotos.html` → `fotos.css`, `multimidia.html` → `media.css`, `fale-conosco.html` → `form.css`. Page sheets hold only page-specific rules. Edit `_css/estilo.css` for styles that should apply across pages.
-- `BPcss/style.css` is the untouched HTML5 Boilerplate base (247 lines) kept aside for the refit.
-- `@font-face` in `_css/estilo.css` points at `_fonts/bubblegum-sans-regular.otf`, but `_fonts/*` files are 1-byte empty stubs — the custom font will not load.
+- Every page links `BPcss/style.css` (HTML5 Boilerplate v9 base: reset/`.box-model` normalization) **first**, then `_css/estilo.css` (the site base: `#interface`, `#menu`, `#icone`, body, a11y/skip-link/focus styles, responsive) **plus** one page sheet: `specs.html` and `google-glass.html` → `specs.css`, `index.html` → (base only), `fotos.html` → `fotos.css`, `multimidia.html` → `media.css`, `fale-conosco.html` → `form.css`. Page sheets hold only page-specific rules. Edit `_css/estilo.css` for styles that should apply across pages.
+- `BPcss/style.css` is the HTML5 Boilerplate base (247 lines) — was kept aside and adopted as the reset/boilerplate base in Fase 4.
+- `@font-face` in `_css/estilo.css` points at `_fonts/bubblegum-sans-regular.otf` (a real file); a second `@font-face`/`@import` setup uses Titillium Web — plan is to consolidate fonts in Fase 5.
 - `404.html` is self-contained: inline `<style>`, no `_css/` link.
 - Keep `@charset "UTF-8"` lowercase at the top of every `_css/` sheet, and never use `transition: all` — list properties.
+- Responsive: `_css/estilo.css` holds the fluid `#interface` (max-width 1000px) and breakpoints (1000/760/480px); page sheets add their own `@media` (e.g. `media.css` scales the `#tv-radio` mockup via `transform: scale()`).
+- `video#dia`/`video#demo` live in `_css/estilo.css` (they're used on `index.html`, which does NOT load `_css/media.css`).
 
 ## Navigation / hover behavior
 - The `<nav id="menu">` is **generated once by `_javascript/nav.js`** (reads `header#cabecalho`, injects `<nav>` as first child, marks `aria-current="page"`); every content page just includes `<script src="_javascript/nav.js">` before `funcoes.js`. Edit `nav.js` to change menu items — not the pages.

@@ -1,14 +1,17 @@
 @charset "UTF-8";
 
-form{
-	width: 900px;
+form {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 900px;
 	margin: auto;
 }
-input, textarea {
+input, textarea, select {
 	font-family: sans-serif;
 	font-weight: normal;
 	font-size: 12pt;
-	background-color: rgba(255, 255, 255,0.8);
+	background-color: rgba(255, 255, 255, 0.8);
+	max-width: 100%;
 }
 input:hover, textarea:hover {
 	background-color: #dddddd;
@@ -20,7 +23,7 @@ legend {
 	font-family: sans-serif;
 }
 fieldset {
-	border-color: #cecece;
+	border: 1px solid #cecece;
 	margin: 20px;
 }
 fieldset#sexo {
@@ -57,4 +60,37 @@ button[type="submit"]:focus-visible {
 }
 input#ctot {
 	font-variant-numeric: tabular-nums;
+}
+@media only screen and (max-width: 820px) {
+	form {
+		padding: 0 10px;
+	}
+	fieldset {
+		margin: 15px 0;
+	}
+	fieldset#sexo {
+		margin: 0 0 10px 20px;
+	}
+	button[type="submit"] {
+		margin-left: 10px;
+	}
+}
+@media only screen and (max-width: 520px) {
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="date"],
+	select,
+	textarea {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+	}
+	fieldset#usuario,
+	fieldset#endereco,
+	fieldset#mensagem,
+	fieldset#pedido {
+		background-image: none;
+	}
 }
