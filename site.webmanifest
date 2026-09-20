@@ -1,12 +1,13 @@
 {
-  "short_name": "",
-  "name": "",
+  "name": "Google Glass — Projeto Curso em Vídeo",
+  "short_name": "Google Glass",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "start_url": "index.html",
+  "background_color": "#dddddd",
+  "theme_color": "#dddddd",
+  "lang": "pt-br"
 }

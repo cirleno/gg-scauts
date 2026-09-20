@@ -1,54 +1,47 @@
 <!doctype html>
-<html class="no-js" lang="pt-br">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Fale Conosco — Google Glass</title>
+  <link rel="stylesheet" href="_css/estilo.css">
+  <link rel="stylesheet" href="_css/form.css">
+  <meta name="description" content="Fale conosco: envie sua mensagem, tire dúvidas ou adquira um Google Glass quando ele estiver disponível.">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="Fale Conosco — Google Glass">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="fale-conosco.html">
+  <meta property="og:image" content="_imagens/contato.png">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#dddddd">
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div id="interface">
 			<header id="cabecalho">
-				<nav id="menu">
-					<h1>Menu Principal</h1>
-					<ul type="disc">
-						<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
-						<li onmouseover="mudaFoto('_imagens/especificacoes-02.jpeg')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
-						<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
-						<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
-						<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
-					</ul>
-				</nav>
 				
-				<hgroup>
+				<hgroup aria-hidden="true">
 					<h1>Google Glass</h1>
 					<h2>A revolução do Google está chegando</h2>
 				</hgroup>
 				
-				<img id="icone" src="_imagens/contato.png"/>
+				<img id="icone" src="_imagens/contato.png" alt="Ícone de contato do Google Glass"/>
 			</header>
 
+			<main id="conteudo">
 			<section id="corpo-full">
 				<article id="noticia-principal">
 					<header id="cabecalho-artigo">
 						<hgroup>
-							<h3>Glass > Fotos</h3>
-							<h1>Galeria de Imagens do Google Glass</h1>
+							<h3>Glass > Fale Conosco</h3>
+							<h1>Formulário de Contato</h1>
 							<h2>por Gustavo Guanabara</h2>
 							<h3 class='direita'>Atualizado em 01/Maio/2013</h3>
 						</hgroup>
@@ -57,25 +50,25 @@
 					<form method="post" id="fcontato" action="mailto:cirleno@yahoo.com.br" oninput="calc_total();">
 						<fieldset id="usuario">
 							<legend>Identificação do Usuário</legend>
-						    <p><label for="cnome">Nome:&nbsp</label><input type="text" name="tnome" id="cnome" size="46" maxlength="50" placeholder="Nome Completo"/> </p>
-						    <p><label for="cemail">e-Mail:&nbsp</label><input type="email" name="temail" id="cemail" size="30" maxlength="25" placeholder="Correspondência eletrônica"/></p>
-						    <p><label for="cnasc">Data de Nascimento:&nbsp</label><input type="date" name="tnasc" id="cnasc"> </p>
-						    <p><label for="csenha">Senha:&nbsp</label><input type="password" name="tsenha" id="csenha" size="3" maxlength="8" placeholder="8 digitos"/> </p>
+						    <p><label for="cnome">Nome:&nbsp</label><input type="text" name="tnome" id="cnome" size="46" maxlength="50" placeholder="Nome Completo" autocomplete="name"/> </p>
+						    <p><label for="cemail">e-Mail:&nbsp</label><input type="email" name="temail" id="cemail" size="30" maxlength="64" placeholder="nome@exemplo.com" autocomplete="email" spellcheck="false"/></p>
+						    <p><label for="cnasc">Data de Nascimento:&nbsp</label><input type="date" name="tnasc" id="cnasc" autocomplete="bday"> </p>
+						    <p><label for="csenha">Senha:&nbsp</label><input type="password" name="tsenha" id="csenha" placeholder="Mínimo 8 caracteres" autocomplete="off" minlength="8"/> </p>
 						    	<fieldset id="sexo">
-						    		<legend>sexo</legend>
-						    		<input type="radio" name="tsexo" id="cmasc" checked="" /> <label for="cmasc">Marculino</label></br>
+						    		<legend>Sexo</legend>
+						    		<input type="radio" name="tsexo" id="cmasc" checked /> <label for="cmasc">Masculino</label><br>
 						        	<input type="radio" name="tsexo" id="cfemi"/> <label for="cfemi">Feminino</label>
 						        </fieldset>
 						</fieldset>
 
 						<fieldset id="endereco">						
 							<legend>Endereço do Usuário</legend>
-						    <p><label for="cender">Logradouro:&nbsp</label><input type="text" name="tender" id="cender" size="42" maxlength="80" placeholder="Endereço: Rua; Av; Travessa; Estrada; Rodovia; Viela" required=""></p>	
-						    <p><label for="ccomple">Complemento:&nbsp<input type="text" name="tcomple" id="ccomple" size="30" maxlength="35" placeholder="Casa, Apto, Sala, Fundos"></label></p>
-						    <p><label for="cnum">Número:&nbsp<input type="number" name="tnum" id="cnum" min="0" max="99999" required="Requerido" placeholder="N°"></label></p>
+						    <p><label for="cender">Logradouro:&nbsp</label><input type="text" name="tender" id="cender" size="42" maxlength="80" placeholder="Rua, Avenida, Travessa, Estrada, Rodovia, Viela" required autocomplete="address-line1"></p>	
+						    <p><label for="ccomple">Complemento:&nbsp<input type="text" name="tcomple" id="ccomple" size="30" maxlength="35" placeholder="Casa, Apartamento, Sala, Fundos" autocomplete="address-line2"></label></p>
+						    <p><label for="cnum">Número:&nbsp<input type="number" name="tnum" id="cnum" min="0" max="99999" required placeholder="Número" autocomplete="address-line3"></label></p>
 				<!--Para formularios de cidades e estados por exemplo, será nescessário programação em PHP-->
-						    <p><label for="cest">Estado:&nbsp<select name="text" id="cest" required="Requerido">
-						    	<option value="Rj"> </option>
+						    <p><label for="cest">Estado:&nbsp<select name="testado" id="cest" required autocomplete="address-level1">
+						    	<option value="">Selecione o estado</option>
 						    	<option value="Rj">Rio de Janeiro</option>
 						    	<option value="Sp">São Paulo</option>
 						    	<option value="Pr">Paraná</option>
@@ -83,53 +76,55 @@
 						    	<option value="Rs">Rio Grande do Sul</option>
 						    </select></p>
 				<!--Para formularios de cidades e estados por exemplo, será nescessário programação em PHP-->
-						    <p><label for="cCid">Cidade:&nbsp</label><input type="text" name="tcid" id="cCid" maxlength="20" placeholder="Sua Cidade" list="cidades" required=""></p>
+						    <p><label for="cCid">Cidade:&nbsp</label><input type="text" name="tcid" id="cCid" maxlength="20" placeholder="Sua Cidade" list="cidades" required autocomplete="address-level2"></p>
 						    <datalist id="cidades">
 						    	<option value="Rio de Janeiro"></option>
 						    	<option value="Nova Iguaçu"></option>
 						    	<option value="Niterói"></option>
 						    	<option value="Curitiba"></option>
 						    	<option value="Florianópolis"></option>
-						    	<option value="São Paulo "></option>
+						    	<option value="São Paulo"></option>
 						    </datalist>
 						</fieldset>
 
 						<fieldset id="mensagem">
 							<legend>Mensagem do Usuário</legend> 
 						    <p><label for="curg">Grau de Urgência:</label>
-						    Min<input type="range" name="turg" id="curg" min="0" max="10">Máx</p>
+						    <input type="range" name="turg" id="curg" min="0" max="10" value="0"></p>
 						    <p><label for="cmsg">Mensagem:</label>
-						    <textarea name="tmsg" id="cmsg" cols="45" rows="5" placeholder="Digite aqui a sua menssagem..."></textarea></p>
+						    <textarea name="tmsg" id="cmsg" cols="45" rows="5" placeholder="Digite aqui a sua mensagem..."></textarea></p>
 						</fieldset>
 
 						<fieldset id="pedido">
 							<legend>Quero um Google Glass</legend>
-							<p><input type="checkbox" name="tped" id="cped" checked="">
+							<p><input type="checkbox" name="tped" id="cped" checked>
 						    	<label for="cped">Gostaria de adquirir um Google Glass quando disponível?</label></p>
 						    <p><label for="cCor">Cor:</label>
 						    	<input type="color" name="tcor" id="cCor" value="#ffffff"></p>
 						    <p><label for="cqtd">Quantidade:</label>
 						    <input type="number" name="tqtd" id="cqtd" min="0" max="99" value="0"></p>
-						    <p><label for="ctot">Preço Total: R$</label>
-						    <input type="text" name="ttot" id="ctot" placeholder="Total a Pagar" readonly=""></p>
+						    <p><label for="ctot">Preço Total: R$ </label>
+						    <input type="text" name="ttot" id="ctot" placeholder="Total a Pagar" readonly></p>
 						</fieldset>
 
-						<p><input type="image" name="tenviar" src="_imagens/botao-enviar.png" alt=""></p>
+						<button type="submit" name="tenviar">Enviar</button>
 					</form>
 
 				</article>
 			</section>
+			</main>
 
 			<!-- Footer -->
 			<footer id="rodape">
 				<p> <b> © Copyright 2013 - by Gustavo Guanabara &nbsp</b>
-				<a href="https://www.facebook.com/cursosemvideo" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true" style="display: inline;"/></i></a>
-				<a href="https://twitter.com/cursosemvideo" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" style="display: inline;" alt="twitter Gustavo Guanabara"></i></a>
-				<a href="https://www.youtube.com/channel/UCrWvhVmt0Qac3HgsjQK62FQ" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true" style="display: inline;" alt="twitter Gustavo Guanabara"></i></a></p>		
+				<a href="https://www.facebook.com/cursosemvideo" target="_blank" rel="noopener" aria-label="Facebook do Curso em Vídeo"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/cursosemvideo" target="_blank" rel="noopener" aria-label="Twitter do Curso em Vídeo"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCrWvhVmt0Qac3HgsjQK62FQ" target="_blank" rel="noopener" aria-label="YouTube do Curso em Vídeo"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i></a></p>		
 				<p> <b> Executado 2016 - by Cirleno &nbsp</b>
-				<a href="https://br.linkedin.com/in/cirleno" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" style="display: inline;"/></i></a></p>
+				<a href="https://br.linkedin.com/in/cirleno" target="_blank" rel="noopener" aria-label="LinkedIn de Cirleno"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></p>
 	          <script src="https://use.fontawesome.com/d7c3fe8fa0.js"></script>
-	          <script language="javascript" src="_javascript/funcoes.js"></script>
+	          <script src="_javascript/nav.js"></script>
+	          <script src="_javascript/funcoes.js"></script>
 	        </footer> <!-- End of Footer-->
 		</div>
 </body>

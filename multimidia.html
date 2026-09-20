@@ -1,48 +1,41 @@
 <!doctype html>
-<html class="no-js" lang="pt-br">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Multimídia — Google Glass</title>
+  <link rel="stylesheet" href="_css/estilo.css">
+  <link rel="stylesheet" href="_css/media.css">
+  <meta name="description" content="Sons e vídeos do Google Glass: ouça a música e assista ao vídeo de demonstração do óculos de realidade aumentada do Google.">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="Multimídia — Google Glass">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="multimidia.html">
+  <meta property="og:image" content="_imagens/multimidia.png">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#dddddd">
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div id="interface">
 			<header id="cabecalho">
-				<nav id="menu">
-					<h1>Menu Principal</h1>
-					<ul type="disc">
-						<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="index.html">Home</a></li>
-						<li onmouseover="mudaFoto('_imagens/especificacoes-02.jpeg')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="specs.html">Especificações</a></li>
-						<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fotos.html">Fotos</a></li>
-						<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="multimidia.html">Multimídia</a></li>
-						<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="fale-conosco.html">Fale conosco</a></li>
-					</ul>
-				</nav>
 				
-				<hgroup>
+				<hgroup aria-hidden="true">
 					<h1>Google Glass</h1>
 					<h2>A revolução do Google está chegando</h2>
 				</hgroup>
 				
-				<img id="icone" src="_imagens/multimidia.png">
+				<img id="icone" src="_imagens/multimidia.png" alt="Ícone de reprodução de mídia do Google Glass">
 			</header>
 
+			<main id="conteudo">
 			<section id="corpo-full">
 				<article id="noticia-principal">
 					<header id="cabecalho-artigo">
@@ -55,33 +48,35 @@
 					</header>	
 					
 					<div id="tv-radio">
-						<audio id="musica" controls="controls">
+						<audio id="musica" controls aria-label="Áudio: Lovers Carvings, de Bibio">
 							<source src="_media/2009-lovers-carvings-bibio.mp3" type="audio/mpeg"/>
 							<source src="_media/2009-lovers-carvings-bibio.ogg" type="audio/ogg"/>
 							<source src="_media/2009-lovers-carvings-bibio.m4a" type="audio/m4a"/>
-							Desculpe, mas não foi possivel caregar o audio!
+							Desculpe, mas não foi possível carregar o áudio!
 						</audio>
 
-						<video id="filme" controls="contros" poster="_imagens/video-mini03.jpg ">
+						<video id="filme" controls poster="_imagens/video-mini03.jpg" aria-label="Vídeo: primeiros passos com o Google Glass">
 							<source src="_media/getting-started.mp4" type="video/mp4"/>
 							<source src="_media/getting-started.ogv" type="video/ogg"/>
 							<source src="_media/getting-started.webm" type="video/webm"/>
-							Desculpe, mas não foi possivel carregar o video!
+							Desculpe, mas não foi possível carregar o vídeo!
 						</video>
 					</div>	
 
 				</article>
 			</section>
+			</main>
 			<!-- Footer -->
 			<footer id="rodape">
 				<p> <b> © Copyright 2013 - by Gustavo Guanabara &nbsp</b>
-				<a href="https://www.facebook.com/cursosemvideo" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true" style="display: inline;"/></i></a>
-				<a href="https://twitter.com/cursosemvideo" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" style="display: inline;" alt="twitter Gustavo Guanabara"></i></a>
-				<a href="https://www.youtube.com/channel/UCrWvhVmt0Qac3HgsjQK62FQ" target="_blank"><i class="fa fa-youtube-square fa-2x" aria-hidden="true" style="display: inline;" alt="twitter Gustavo Guanabara"></i></a></p>		
+				<a href="https://www.facebook.com/cursosemvideo" target="_blank" rel="noopener" aria-label="Facebook do Curso em Vídeo"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/cursosemvideo" target="_blank" rel="noopener" aria-label="Twitter do Curso em Vídeo"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/channel/UCrWvhVmt0Qac3HgsjQK62FQ" target="_blank" rel="noopener" aria-label="YouTube do Curso em Vídeo"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i></a></p>		
 				<p> <b> Executado 2016 - by Cirleno &nbsp</b>
-				<a href="https://br.linkedin.com/in/cirleno" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" style="display: inline;"/></i></a></p>
+				<a href="https://br.linkedin.com/in/cirleno" target="_blank" rel="noopener" aria-label="LinkedIn de Cirleno"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></p>
 	          <script src="https://use.fontawesome.com/d7c3fe8fa0.js"></script>
-	          <script language="javascript" src="_javascript/funcoes.js"></script>
+	          <script src="_javascript/nav.js"></script>
+	          <script src="_javascript/funcoes.js"></script>
 	        </footer> <!-- End of Footer-->
 		</div>
 </body>
