@@ -7,7 +7,7 @@ body {
 div#interface {
 	width: 1000px;
 	background-color: #ffffff;
-	margin: -20px auto 10px auto;
+	margin: 20px auto 10px auto;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 	padding: 10px 10px 10px 10px;
 }
@@ -26,30 +26,48 @@ header#cabecalho img#icone {
 	position: absolute;
 	left: auto;
 	right: 15px;
-	top: 15px;
+	top: 56px;
+}
+/* Logo Google Glass sobre a linha divisória */
+header#cabecalho::before {
+	content: '';
+	position: absolute;
+	left: 10px;
+	bottom: -12px;
+	width: 113px;
+	height: 68px;
+	background: url('../_imagens/glass-logo-med.jpg') no-repeat center center / 100% 100%;
+	z-index: 0;
 }
 /* Formatação de imagens com legendas */
 header#cabecalho {
 	border-bottom: 1px #606060 solid;
 	height: 150px;
-	background: url('../_imagens/glass-logo-peq.jpg') no-repeat 0px 80px;
 	position: relative;
+}
+header#cabecalho hgroup {
+	position: absolute;
+	top: 2px;
+	left: 10px;
+	z-index: 1;
 }
 header#cabecalho h1 {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 30pt;
+	line-height: 1.15;
 	color: #606060;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 	padding: 0px;
-	margin-bottom: 0px;
+	margin: 0;
 }
 header#cabecalho h2 {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 15pt;
+	line-height: 1.15;
 	color: #888888;
 	
 	padding: 0px;
-	margin-top: 0px;
+	margin: 2px 0 0 12px;
 }
 figure.foto-legenda {
 	position: relative;
@@ -86,7 +104,7 @@ nav#menu ul {
 	position: relative;
 	top: -20px;
 	display: inline-block;
-	margin: 0 0 -70px 350px;
+	margin: 0 0 0 350px;
 }
 nav#menu li {
 	display: inline-block;
@@ -275,25 +293,36 @@ div#interface {
 	box-sizing: border-box;
 	width: auto;
 	max-width: 1000px;
-	margin: -20px auto 10px;
+	margin: 20px auto 10px;
 }
 @media only screen and (max-width: 1000px) {
 	div#interface {
-		margin: 0 10px 10px;
+		margin: 20px 10px 10px;
 	}
 	header#cabecalho {
 		height: 130px;
 	}
+	header#cabecalho::before {
+		width: 95px;
+		height: 57px;
+		bottom: -8px;
+	}
 	header#cabecalho img#icone {
 		left: auto;
 		right: 15px;
-		top: 25px;
+		top: 52px;
 	}
 	nav#menu ul {
 		margin-left: 200px;
 	}
 }
 @media only screen and (max-width: 760px) {
+	header#cabecalho {
+		height: auto;
+	}
+	header#cabecalho::before {
+		display: none;
+	}
 	header#cabecalho h1 {
 		font-size: 22pt;
 	}
@@ -302,6 +331,10 @@ div#interface {
 	}
 	header#cabecalho img#icone {
 		top: 25px;
+	}
+	header#cabecalho hgroup {
+		position: static;
+		margin-top: 6px;
 	}
 	nav#menu ul {
 		position: static;
@@ -340,9 +373,7 @@ div#interface {
 }
 @media only screen and (max-width: 480px) {
 	header#cabecalho {
-		height: 110px;
-		background-position: 0 90px;
-		background-size: 55% auto;
+		height: auto;
 	}
 	header#cabecalho img#icone {
 		width: 45px;
