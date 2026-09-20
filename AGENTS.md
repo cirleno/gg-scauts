@@ -9,8 +9,8 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 - All copy, titles, and nav labels stay in Portuguese (pt-br).
 
 ## Stylesheets (refit gotcha)
-- Every page links `BPcss/style.css` (HTML5 Boilerplate v9 base: reset/`.box-model` normalization) **first**, then `_css/estilo.css` (the site base: `#interface`, `#menu`, `#icone`, body, a11y/skip-link/focus styles, responsive) **plus** one page sheet: `specs.html` and `google-glass.html` → `specs.css`, `index.html` → (base only), `fotos.html` → `fotos.css`, `multimidia.html` → `media.css`, `fale-conosco.html` → `form.css`. Page sheets hold only page-specific rules. Edit `_css/estilo.css` for styles that should apply across pages.
-- `BPcss/style.css` is the HTML5 Boilerplate base (247 lines) — was kept aside and adopted as the reset/boilerplate base in Fase 4.
+- Every page links `_css/style.css` (HTML5 Boilerplate v9 base: reset/`.box-model` normalization) **first**, then `_css/estilo.css` (the site base: `#interface`, `#menu`, `#icone`, body, a11y/skip-link/focus styles, responsive) **plus** one page sheet: `specs.html` and `google-glass.html` → `specs.css`, `index.html` → (base only), `fotos.html` → `fotos.css`, `multimidia.html` → `media.css`, `fale-conosco.html` → `form.css`. Page sheets hold only page-specific rules. Edit `_css/estilo.css` for styles that should apply across pages.
+- `_css/style.css` is the HTML5 Boilerplate base (247 lines) — was kept aside and adopted as the reset/boilerplate base in Fase 4.
 - `404.html` is self-contained: inline `<style>`, no `_css/` link.
 - Keep `@charset "UTF-8"` lowercase at the top of every `_css/` sheet, and never use `transition: all` — list properties.
 - Responsive: `_css/estilo.css` holds the fluid `#interface` (max-width 1000px) and breakpoints (1000/760/480px); page sheets add their own `@media` (e.g. `media.css` scales the `#tv-radio` mockup via `transform: scale()`).
