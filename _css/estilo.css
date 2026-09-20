@@ -1,8 +1,54 @@
 @charset "UTF-8";
+/* ===================== */
+/* = Fase 0 - Tokens    = */
+/* ===================== */
+:root {
+	/* Cores de marca (paleta "Glass" modernizada) */
+	--cor-primaria: #00a0b0;
+	--cor-primaria-escura: #00838f;
+	--cor-secundaria: #e91e63;
+	--cor-fundo-site: #dddddd;
+	--cor-fundo-interface: #ffffff;
+	--cor-texto: #1f1f1f;
+	--cor-texto-suave: #606060;
+	--cor-texto-claro: #888888;
+	--cor-borda-clara: #cecece;
+	--cor-fundo-figura: rgba(0, 0, 0, 0.4);
+
+	/* Cores do menu */
+	--cor-fundo-menu: #dddddd;
+	--cor-hover-menu: #606060;
+	--cor-texto-menu: #000000;
+	--cor-texto-menu-hover: #ffffff;
+	--cor-marca: #606060;
+	--cor-acento-foco: #00a0b0;
+
+	/* Tipografia */
+	--fonte-titulo: 'Titillium Web', 'Titillium Web', sans-serif;
+	--fonte-corpo: 'Titillium Web', Arial, sans-serif;
+	--escala-titulo-1: clamp(1.6rem, 1.2rem + 2.2vh, 2.2rem);
+	--escala-titulo-2: clamp(1.1rem, 0.9rem + 1.4vh, 1.5rem);
+
+	/* Espaçamento e raio */
+	--espaco-interface: 10px;
+	--raio-card: 12px;
+	--raio-botao: 6px;
+	--max-interface: 1000px;
+
+	/* Sombras */
+	--sombra-interface: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	--sombra-card: 0 2px 6px rgba(0, 0, 0, 0.1);
+	--sombra-hover: 0 8px 20px rgba(0, 131, 143, 0.18 Vine;
+
+	/* Transições (listadas, nunca `all`) */
+	--transicao-curta: background-color 200ms ease, color 200ms ease;
+	--transicao-sombra: box-shadow 200ms ease, transform 200ms ease;
+}
 body {
-	font-family: Arial, sans-serif;
-	background-color: #dddddd;
-	color: rgba(0, 0, 0, 1);
+	font-family: var(--fonte-corpo);
+	background-color: var(--cor-fundo-site);
+	color: var(--cor-texto);
+	line-height: 1.65;
 }
 div#interface {
 	width: 1000px;
@@ -12,8 +58,10 @@ div#interface {
 	padding: 10px 10px 10px 10px;
 }
 p {
-	text-align: justify;
-	text-indent: 50px;
+	text-align: left;
+	text-indent: 0;
+	line-height: 1.65;
+	margin-bottom: 1em;
 }
 a {
 	color: #606060;
