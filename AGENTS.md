@@ -52,7 +52,7 @@ A static, no-framework multi-page site in Portuguese (pt-br): the "Google Glass"
 - `google-glass.html` and `404.html` are exceptions: no skip link/main/nav (iframe-only content / self-contained).
 
 ## Versioning / Tags
-- Releases are annotated git tags on `main`, one per completed refit/fix batch, always pushed to `origin`. Currently at **v13** (`5589924`, header: logo sobre a divisória + header responsivo).
+- Releases are annotated git tags on `main`, one per completed refit/fix batch, always pushed to `origin`. Currently at **v14** (`5ce9b72`, Fase 0+1: design tokens em `:root` + tipografia fluida no corpo).
 - When you finish a batch: create + push an annotated tag (`git tag -a vN -m "descrição"` → `git push origin vN`), bump this AGENTS.md note, then commit. Example: `git tag -a v14 -m "…"`.
 - Commit messages are pt-br, Conventional-Commits style (`refactor:`, `fix:`, `feat:`, `chore:`, `docs:`), single short subject (+ optional body), matching the existing `git log`.
 - Keep AGENTS.md describing the **current** (tagged) state — it's the runbook for whatever commit an agent checks out.
