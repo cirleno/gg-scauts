@@ -26,8 +26,6 @@
 	/* Tipografia */
 	--fonte-titulo: 'Titillium Web', sans-serif;
 	--fonte-corpo: 'Titillium Web', Arial, sans-serif;
-	--escala-titulo-1: clamp(1.6rem, 1.2rem + 2.2vh, 2.2rem);
-	--escala-titulo-2: clamp(1.1rem, 0.9rem + 1.4vh, 1.5rem);
 
 	/* Espaçamento e raio */
 	--espaco-interface: 10px;
@@ -51,11 +49,13 @@ body {
 	line-height: 1.65;
 }
 div#interface {
-	width: 1000px;
-	background-color: #ffffff;
-	margin: 20px auto 10px auto;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-	padding: 10px 10px 10px 10px;
+	box-sizing: border-box;
+	width: auto;
+	max-width: 1000px;
+	background-color: var(--cor-fundo-interface);
+	margin: 20px auto 10px;
+	box-shadow: var(--sombra-interface);
+	padding: var(--espaco-interface);
 }
 p {
 	text-align: left;
@@ -76,17 +76,6 @@ header#cabecalho img#icone {
 	right: 15px;
 	top: 56px;
 }
-/* Logo Google Glass sobre a linha divisória */
-header#cabecalho::before {
-	content: '';
-	position: absolute;
-	left: 10px;
-	bottom: -12px;
-	width: 113px;
-	height: 68px;
-	background: url('../_imagens/glass-logo-med.jpg') no-repeat center center / 100% 100%;
-	z-index: 0;
-}
 /* Formatação de imagens com legendas */
 header#cabecalho {
 	border-bottom: 1px #606060 solid;
@@ -100,20 +89,20 @@ header#cabecalho hgroup {
 	z-index: 1;
 }
 header#cabecalho h1 {
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 30pt;
+	font-family: var(--fonte-titulo);
+	font-size: 2.5rem;
 	line-height: 1.15;
-	color: #606060;
+	color: var(--cor-marca);
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 	padding: 0px;
 	margin: 0;
 }
 header#cabecalho h2 {
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 15pt;
+	font-family: var(--fonte-titulo);
+	font-size: 1.25rem;
 	line-height: 1.15;
-	color: #888888;
-	
+	color: var(--cor-texto-claro);
+
 	padding: 0px;
 	margin: 2px 0 0 12px;
 }
@@ -163,11 +152,6 @@ nav#menu li {
 	border-radius: var(--raio-botao);
 	transition: var(--transicao-curta);
 }
-nav#menu li:focus-within {
-	background-color: var(--cor-hover-menu);
-	outline: 2px solid var(--cor-acento-foco);
-	outline-offset: 2px;
-}
 nav#menu li:hover {
 	background-color: var(--cor-hover-menu);
 }
@@ -203,16 +187,16 @@ section#corpo {
 	padding-right: 15px;
 }
 article#noticia-principal h2 {
-	font-size: 13pt;
+	font-size: 1.083rem;
 	color: #606060;
 	background-color: #dddddd;
 	padding: 5px 0px 5px 10px;
 	margin: 10px 0px 10px 0px;
 }
 header#cabecalho-artigo h1 {
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 20pt;
-	color: #606060;
+	font-family: var(--fonte-titulo);
+	font-size: 1.667rem;
+	color: var(--cor-marca);
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -220,7 +204,7 @@ header#cabecalho-artigo h1 {
 	text-align: right;
 }
 header#cabecalho-artigo h2 {
-	font-size: 13pt;
+	font-size: 1.083rem;
 	color: #cecece;
 	background-color: #ffffff;
 	margin: 0px;
@@ -254,14 +238,14 @@ table#tabelaspec td.cd {
 }
 table#tabelaspec caption {
 	color: #888888;
-	font-size: 13pt;
+	font-size: 1.083rem;
 	font-weight: bolder;
 }
 table#tabelaspec caption span {
 	display: block;
 	float: right;
 	color: #000000;
-	font-size: 8pt;
+	font-size: 0.667rem;
 	margin-top: 10px;
 }
 aside#lateral {
@@ -275,14 +259,14 @@ aside#lateral {
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 aside#lateral h1 {
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 20pt;
-	color: #606060;
-	margin-top: 0px; 
+	font-family: var(--fonte-titulo);
+	font-size: 1.667rem;
+	color: var(--cor-marca);
+	margin-top: 0px;
 }
 aside#lateral h2 {
 	background-color: #606060;
-	font-size: 15pt;
+	font-size: 1.25rem;
 	color: #ffffff;
 	padding: 5px;
 }
@@ -328,10 +312,12 @@ textarea:focus-visible,
 	outline-offset: 2px;
 }
 nav#menu li:focus-within {
-	background-color: #606060;
+	background-color: var(--cor-hover-menu);
+	outline: 2px solid var(--cor-acento-foco);
+	outline-offset: 2px;
 }
 nav#menu li:focus-within a {
-	color: #ffffff;
+	color: var(--cor-texto-menu-hover);
 }
 [id] {
 	scroll-margin-top: 15px;
@@ -349,23 +335,12 @@ input[type="submit"] {
 	}
 }
 /* Responsivo */
-div#interface {
-	box-sizing: border-box;
-	width: auto;
-	max-width: 1000px;
-	margin: 20px auto 10px;
-}
 @media only screen and (max-width: 1000px) {
 	div#interface {
 		margin: 20px 10px 10px;
 	}
 	header#cabecalho {
 		height: 130px;
-	}
-	header#cabecalho::before {
-		width: 95px;
-		height: 57px;
-		bottom: -8px;
 	}
 	header#cabecalho img#icone {
 		left: auto;
@@ -380,14 +355,11 @@ div#interface {
 	header#cabecalho {
 		height: auto;
 	}
-	header#cabecalho::before {
-		display: none;
-	}
 	header#cabecalho h1 {
-		font-size: 22pt;
+		font-size: 1.833rem;
 	}
 	header#cabecalho h2 {
-		font-size: 12pt;
+		font-size: 1rem;
 	}
 	header#cabecalho img#icone {
 		top: 25px;
@@ -440,17 +412,17 @@ div#interface {
 		height: auto;
 	}
 	nav#menu li {
-		font-size: 10pt;
+		font-size: 0.833rem;
 		padding: 6px;
 	}
 	header#cabecalho-artigo h1 {
-		font-size: 16pt;
+		font-size: 1.333rem;
 	}
 	article#noticia-principal h2 {
-		font-size: 12pt;
+		font-size: 1rem;
 	}
 	table#tabelaspec td {
 		padding: 6px;
-		font-size: 10pt;
+		font-size: 0.833rem;
 	}
 }
