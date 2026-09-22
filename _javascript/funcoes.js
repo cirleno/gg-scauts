@@ -1,7 +1,3 @@
-function mudaFoto(foto) {
-  document.getElementById("icone").src = foto;
-}
-
 function calc_total() {
   var quantidade = document.getElementById("cqtd");
   var total = document.getElementById("ctot");
@@ -9,43 +5,13 @@ function calc_total() {
     return;
   }
   var qtd = parseInt(quantidade.value, 10);
-  if (isNaN(qtd) || qtd <= 0) {
-    total.value = "";
-    return;
-  }
-  total.value = (qtd * 1500).toFixed(2);
+  var formato = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+  total.textContent = isNaN(qtd) || qtd <= 0 ? formato.format(0) : formato.format(qtd * 1500);
 }
 
-function initNavigation() {
-  var menu = document.getElementById("menu");
-  var icone = document.getElementById("icone");
-  if (!menu || !icone) {
-    return;
+(function () {
+  var formulario = document.getElementById("fcontato");
+  if (formulario) {
+    formulario.addEventListener("input", calc_total);
   }
-  icone.setAttribute("data-padrao", icone.getAttribute("src"));
-  menu.addEventListener("mouseover", onNavEnter, true);
-  menu.addEventListener("mouseout", onNavLeave);
-  menu.addEventListener("focusin", onNavEnter, true);
-  menu.addEventListener("focusout", onNavLeave);
-}
-
-function onNavEnter(event) {
-  var alvo = event.target.closest("[data-icone]");
-  if (alvo) {
-    mudaFoto(alvo.getAttribute("data-icone"));
-  }
-}
-
-function onNavLeave(event) {
-  var menu = document.getElementById("menu");
-  var destino = event.relatedTarget;
-  if (destino && menu && menu.contains(destino)) {
-    return;
-  }
-  var icone = document.getElementById("icone");
-  if (icone) {
-    mudaFoto(icone.getAttribute("data-padrao"));
-  }
-}
-
-initNavigation();
+}());

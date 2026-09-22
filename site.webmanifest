@@ -7,7 +7,7 @@
     "sizes": "192x192"
   }],
   "start_url": "index.html",
-  "background_color": "#dddddd",
-  "theme_color": "#dddddd",
+  "background_color": "#f8f9fa",
+  "theme_color": "#f8f9fa",
   "lang": "pt-br"
 }

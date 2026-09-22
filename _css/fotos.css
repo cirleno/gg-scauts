@@ -2,130 +2,64 @@
 
 ul#album-fotos {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 700px;
-	margin: 0 auto;
-	padding: 20px;
-	overflow: hidden;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 ul#album-fotos li {
-	display: flex;
-	align-items: flex-end;
-	width: 100%;
+	position: relative;
 	aspect-ratio: 1 / 1;
-	border: 5px solid #ffffff;
-	background-color: #ffffff;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-	-webkit-transition: -webkit-transform .4s ease-in, opacity .4s ease-in;
-	transition: transform .4s ease-in, opacity .4s ease-in;
+	border-radius: var(--raio-card);
+	overflow: hidden;
+	background-color: var(--cor-fundo-card);
+	background-position: 50% 50%;
+	background-size: cover;
+	box-shadow: var(--sombra-card);
+	transition: var(--transicao-sombra);
 }
 ul#album-fotos span {
-	opacity: 0;
+	position: absolute;
+	inset: auto 0 0 0;
+	padding: 10px 12px;
 	color: #ffffff;
-	text-shadow: 1px 1px 1px #000000;
-	background-color: rgba(0, 0, 0, 0.3);
-	font-size: 9pt;
-	width: 100%;
-	padding: 5px;
-	box-sizing: border-box;
+	font-size: 0.85rem;
+	background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+	opacity: 0;
+	transition: var(--transicao-opacidade);
 }
 ul#album-fotos li:hover,
 ul#album-fotos li:focus-visible {
-	-webkit-transform: scale(1.5);
-	transform: scale(1.5);
+	transform: scale(1.04);
+	box-shadow: var(--sombra-hover);
 }
 ul#album-fotos li:hover span,
 ul#album-fotos li:focus-visible span {
 	opacity: 1;
 }
-ul#album-fotos li:focus-visible {
-	outline: 3px solid #00a0b0;
-	outline-offset: -3px;
-}
 ul#album-fotos li#foto01 {
-	background: url('../_imagens/galeria-01.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
-}
-ul#album-fotos li#foto01:hover,
-ul#album-fotos li#foto01:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
+	background-image: url('../_imagens/galeria-01.jpg');
 }
 ul#album-fotos li#foto02 {
-	background: url('../_imagens/galeria-02.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
-}
-ul#album-fotos li#foto02:hover,
-ul#album-fotos li#foto02:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
+	background-image: url('../_imagens/galeria-02.jpg');
 }
 ul#album-fotos li#foto03 {
-	background: url('../_imagens/galeria-03.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
-}
-ul#album-fotos li#foto03:hover,
-ul#album-fotos li#foto03:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
+	background-image: url('../_imagens/galeria-03.jpg');
 }
 ul#album-fotos li#foto04 {
-	background: url('../_imagens/galeria-04.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
-}
-ul#album-fotos li#foto04:hover,
-ul#album-fotos li#foto04:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
+	background-image: url('../_imagens/galeria-04.jpg');
 }
 ul#album-fotos li#foto05 {
-	background: url('../_imagens/galeria-05.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
-}
-ul#album-fotos li#foto05:hover,
-ul#album-fotos li#foto05:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
+	background-image: url('../_imagens/galeria-05.jpg');
 }
 ul#album-fotos li#foto06 {
-	background: url('../_imagens/galeria-06.jpg') no-repeat;
-	background-position: 50% 50%;
-	background-size: 400px 400px;
-	background-color: #ffffff;
+	background-image: url('../_imagens/galeria-06.jpg');
 }
-ul#album-fotos li#foto06:hover,
-ul#album-fotos li#foto06:focus-visible {
-	background-position: 0px 0px;
-	background-size: 200px 200px;
-}
-@media only screen and (max-width: 480px) {
+
+@media (min-width: 768px) {
 	ul#album-fotos {
 		grid-template-columns: repeat(3, 1fr);
-		gap: 8px;
-		padding: 10px;
-	}
-	ul#album-fotos li:hover,
-	ul#album-fotos li:focus-visible {
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
-		background-position: 50% 50% !important;
-		background-size: cover !important;
-	}
-	ul#album-fotos span {
-		font-size: 8pt;
+		gap: 20px;
 	}
 }

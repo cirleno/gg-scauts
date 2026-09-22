@@ -1,29 +1,120 @@
 @charset "UTF-8";
 
+div#painel-interativo {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	margin-top: 24px;
+}
 section#interativo {
-	box-sizing: border-box;
-	width: auto;
-	max-width: 1000px;
-	margin: 20px auto;
-	padding: 0 20px;
 	text-align: center;
+	container-type: inline-size;
 }
 section#interativo img {
+	display: none;
+	width: 500px;
 	max-width: 100%;
 	height: auto;
+	border-radius: var(--raio-card);
+	box-shadow: var(--sombra-card);
+}
+#mapa-links {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(8px, 2vw, 14px);
+	width: 86%;
+	margin: 16px auto 0;
+	text-align: center;
+}
+#mapa-links a {
+	display: block;
+	padding: clamp(12px, 2.5vw, 16px);
+	border: 1px solid var(--cor-borda);
+	border-left: 4px solid var(--cor-marca);
+	border-radius: var(--raio-card);
+	background-color: var(--cor-fundo-card);
+	color: var(--cor-texto);
+	box-shadow: var(--sombra-card);
+	text-decoration: none;
+	font-weight: 600;
+	transition: var(--transicao-curta);
+}
+#mapa-links a:hover,
+#mapa-links a:focus-visible {
+	background-color: var(--cor-hover-menu);
+	color: var(--cor-marca);
+	border-color: var(--cor-marca);
+}
+@container (min-width: 545px) {
+	section#interativo img {
+		display: block;
+	}
+	#mapa-links {
+		grid-template-columns: repeat(4, auto);
+		width: auto;
+		gap: 12px;
+		margin: 20px auto 0;
+	}
+}
+@media (min-width: 768px) {
+	div#painel-interativo {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+#topo {
+	text-align: center;
+}
+#tela,
+#camera,
+#sensores,
+#bateria {
+	margin: 20px auto;
+	padding: clamp(14px, 3vw, 22px);
+	background-color: var(--cor-fundo-card);
+	border-radius: var(--raio-card);
+	box-shadow: var(--sombra-card);
+}
+.img-dir {
+	float: right;
+	margin: 0 0 8px 16px;
+	border-radius: var(--raio-botao);
 }
 iframe#frame-espec {
-	width: 400px;
-	max-width: 100%;
-	height: 280px;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 500 / 280;
+	margin: 0;
 	border: none;
+	border-radius: var(--raio-card);
 	overflow: hidden;
+	background-color: var(--cor-fundo-card);
+	box-shadow: var(--sombra-card);
 }
-@media only screen and (max-width: 640px) {
-	section#interativo {
-		padding: 0 10px;
-	}
+@media (max-width: 479px) {
 	iframe#frame-espec {
-		margin-top: 15px;
+		aspect-ratio: 3 / 2;
+	}
+	#tela,
+	#camera,
+	#sensores,
+	#bateria {
+		font-size: 0.92rem;
+		line-height: 1.55;
+		scroll-margin-top: 8px;
+	}
+	#tela h1,
+	#camera h1,
+	#sensores h1,
+	#bateria h1 {
+		font-size: 1.3rem;
+	}
+	#tela h2,
+	#camera h2,
+	#sensores h2,
+	#bateria h2 {
+		font-size: 1.05rem;
 	}
 }
